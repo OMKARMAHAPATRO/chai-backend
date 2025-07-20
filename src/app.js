@@ -13,7 +13,7 @@ app.use(
 );
 
 app.use(express.json({ limit: "20kb" }));
-app.use(express.urlencoded({ extended: true, limit: "20kb",       
+app.use(express.urlencoded({ extended: true, limit: "20kb"       
 }));
 app.use(express.static("public"));  // middleware to serve static files from the "public" directory
 app.use(cookieParser())  // middleware to parse cookies from incoming requests

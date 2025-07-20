@@ -21,3 +21,5 @@ class ApiError extends Error {
 }
 
 export {ApiError};
+
+// this is used to create a custom error class for API errors, extending the built-in Error class.

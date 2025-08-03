@@ -73,3 +73,15 @@ const asyncHandler =  (requestHandler) =>{
    
 // in this file we  make a warapper function under the name of asyncHandler which will take a requestHandler as an argument and return a function that takes req, res, and next as arguments. 
 // Inside this function, we use Promise.resolve to execute the requestHandler and catch any errors that occur, passing them to the next middleware.
+// purpose of this function is to handle asynchronous operations in Express.js routes, allowing us to write cleaner code without having to manually handle try-catch blocks for each route handler.
+
+
+/*
+
+It takes a route handler (requestHandler) as an argument.
+It returns a new function that wraps the original handler. the new function takes req, res, and next as parameters.
+It calls the original handler and wraps it in a Promise.
+If the handler returns a rejected promise (i.e., throws an error), the error is automatically passed to Express’s next() 
+This allows Express’s built-in error middleware to handle the error, so you don’t need to write try-catch blocks in every async route.
+
+*/

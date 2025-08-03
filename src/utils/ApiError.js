@@ -23,3 +23,4 @@ class ApiError extends Error {
 export {ApiError};
 
 // this is used to create a custom error class for API errors, extending the built-in Error class.
+// purpose : to provide a structured way to handle errors in an API, including status codes, messages, and additional error details.

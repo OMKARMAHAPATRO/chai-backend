@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken"; // used to generate JWT tokens : it converts the user data into a token that can be used for authentication not in human redable format
+import bcrypt from "bcryptjs"; // used to hash passwords : it converts the password into a hash that can be stored in the database securely
 
 
 const userSchema = new Schema(
@@ -62,7 +62,7 @@ userSchema.pre("save", async function(next) {
 
 userSchema.methoods.isPasswordCorrect = async function
 (password){
-  return await bcrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.password);  
 }
 
 userSchema.methods.generateAccessToken = function() {
@@ -101,3 +101,34 @@ export const User = mongoose.model("User", userSchema);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.pre("save", async function(next) {} - 
+             
+> .pre () - methood is used for the pre-save hook, which allows you to perform actions before saving a document to the database.
+> this method is exported from mongoose library - aggregated pipeline concept
+> .compare () - method is used to compare a plain text password with the hashed password stored in the database.
+
+*/

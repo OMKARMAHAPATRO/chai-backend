@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken"; // used to generate JWT tokens : it converts the user data into a token that can be used for authentication not in human redable format
-import bcrypt from "bcryptjs"; // used to hash passwords : it converts the password into a hash that can be stored in the database securely
+import bcrypt from "bcrypt"; // used to hash passwords : it converts the password into a hash that can be stored in the database securely
 
 
 const userSchema = new Schema(
@@ -60,9 +60,9 @@ userSchema.pre("save", async function(next) {
 })
 
 
-userSchema.methoods.isPasswordCorrect = async function
+userSchema.methods.isPasswordCorrect = async function
 (password){
-  return await bcrypt.compare(password, this.password);  
+  return await bcrypt.compare(password, this.password);
 }
 
 userSchema.methods.generateAccessToken = function() {

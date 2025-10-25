@@ -4,6 +4,7 @@ const asyncHandler =  (requestHandler) =>{
         catch((err) => next(err))
     }
 }
+export {asyncHandler}
 
 
 
@@ -85,3 +86,4 @@ If the handler returns a rejected promise (i.e., throws an error), the error is 
 This allows Express’s built-in error middleware to handle the error, so you don’t need to write try-catch blocks in every async route.
 
 */
+

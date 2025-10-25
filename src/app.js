@@ -17,4 +17,21 @@ app.use(express.urlencoded({ extended: true, limit: "20kb"
 }));
 app.use(express.static("public"));  // middleware to serve static files from the "public" directory
 app.use(cookieParser())  // middleware to parse cookies from incoming requests
+
+
+
+// routes  import 
+import userRouter from './routes/user.routes.js'
+
+
+
+// routes Declaration
+app.use("/api/v1/users",userRouter)
+
+//https:localhost:8000/api/v1/user/...register
+
+
+
+
+
 export { app };
